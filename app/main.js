@@ -1,22 +1,203 @@
-var electron = require("electron");
-var fs = require("fs");
+const {
+    app,
+    BrowserWindow,
+    Menu
+} = require('electron');
 var path = require("path");
-var notifier = require("node-notifier");
-var mainWindow;
+// var notifier = require("node-notifier");
+
+
+const template = [{
+        label: 'Edit',
+        submenu: [{
+                role: 'undo'
+            },
+            {
+                role: 'redo'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                role: 'cut'
+            },
+            {
+                role: 'copy'
+            },
+            {
+                role: 'paste'
+            },
+            {
+                role: 'pasteandmatchstyle'
+            },
+            {
+                role: 'delete'
+            },
+            {
+                role: 'selectall'
+            }
+        ]
+    },
+    {
+        label: 'View',
+        submenu: [{
+                role: 'reload'
+            },
+            {
+                role: 'forcereload'
+            },
+            {
+                role: 'toggledevtools'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                role: 'resetzoom'
+            },
+            {
+                role: 'zoomin'
+            },
+            {
+                role: 'zoomout'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                role: 'togglefullscreen'
+            }
+        ]
+    },
+    {
+        role: 'window',
+        submenu: [{
+                role: 'minimize'
+            },
+            {
+                role: 'close'
+            }
+        ]
+    },
+    {
+        role: 'help',
+        submenu: [{
+            label: 'Learn More',
+            click() {
+                require('electron').shell.openExternal('http://blurbot.com')
+            }
+        }]
+    }
+]
+
+if (process.platform === 'darwin') {
+    template.unshift({
+        label: app.getName(),
+        submenu: [{
+                role: 'about'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                role: 'services',
+                submenu: []
+            },
+            {
+                type: 'separator'
+            },
+            {
+                role: 'hide'
+            },
+            {
+                role: 'hideothers'
+            },
+            {
+                role: 'unhide'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                role: 'quit'
+            }
+        ]
+    })
+
+    // Edit menu
+    template[1].submenu.push({
+        type: 'separator'
+    }, {
+        label: 'Speech',
+        submenu: [{
+                role: 'startspeaking'
+            },
+            {
+                role: 'stopspeaking'
+            }
+        ]
+    })
+
+    // Window menu
+    template[3].submenu = [{
+            role: 'close'
+        },
+        {
+            role: 'minimize'
+        },
+        {
+            role: 'zoom'
+        },
+        {
+            type: 'separator'
+        },
+        {
+            role: 'front'
+        }
+    ]
+}
+
+const dockMenu = Menu.buildFromTemplate([{
+        label: 'New Window',
+        click() {
+            console.log('New Window')
+        }
+    }, {
+        label: 'New Window with Settings',
+        submenu: [{
+                label: 'Basic'
+            },
+            {
+                label: 'Pro'
+            }
+        ]
+    },
+    {
+        label: 'New Command...'
+    }
+])
+
+
 function createWindow() {
-    notifier.notify({
-        message: "Hello, there",
-        title: "My notification"
-    });
+    // notifier.notify({
+    //     message: "Hello, there",
+    //     title: "My notification"
+    // });
     // Create the browser window.
-    mainWindow = new electron.BrowserWindow({
+    const mainWindow = new BrowserWindow({
         height: 600,
         width: 800
     });
     // and load the index.html of the app.
     mainWindow.loadFile(path.join(__dirname, "../index.html"));
+
+    const menu = Menu.buildFromTemplate(template)
+    Menu.setApplicationMenu(menu)
+    app.dock.setMenu(dockMenu)
+
     // Open the DevTools.
     // mainWindow.webContents.openDevTools();
+
     // Emitted when the window is closed.
     mainWindow.on("closed", function () {
         // Dereference the window object, usually you would store windows
@@ -24,29 +205,20 @@ function createWindow() {
         // when you should delete the corresponding element.
         mainWindow = null;
     });
-    fs.readdir("/tmp/wip", function (err, files) {
-        if (err) {
-            throw err;
-        }
-        for (var _i = 0, files_1 = files; _i < files_1.length; _i++) {
-            var file = files_1[_i];
-            console.log(file);
-        }
-    });
 }
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-electron.app.on("ready", createWindow);
+app.on("ready", createWindow);
 // Quit when all windows are closed.
-electron.app.on("window-all-closed", function () {
+app.on("window-all-closed", function () {
     // On OS X it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
     if (process.platform !== "darwin") {
-        electron.app.quit();
+        app.quit();
     }
 });
-electron.app.on("activate", function () {
+app.on("activate", function () {
     // On OS X it"s common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (mainWindow === null) {
