@@ -1,10 +1,25 @@
+/* Custom photon theme */
+
 .pane-one-fourth {
     width: 25%;
     max-width: 300px;
-    min-width: 120px;
+    min-width: 150px;
     flex: none;
 }
 
-.sidebar {
+/* .sidebar {
     padding-top: 10px;
+} */
+
+/* Custom Editormd thene */
+.editormd-toolbar {
+    width: 100%;
+    min-height: 52px;
+    background: #fff;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-bottom: 1px solid #ddd;
 }

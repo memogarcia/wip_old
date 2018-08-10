@@ -596,8 +596,8 @@ input[type="checkbox"] {
   outline: none;
 }
 .form-control:focus {
-  border-color: #6db3fd;
-  box-shadow: 3px 3px 0 #6db3fd, -3px -3px 0 #6db3fd, -3px 3px 0 #6db3fd, 3px -3px 0 #6db3fd;
+  border-color: #ffffff;
+  box-shadow: 3px 3px 0 #ffffff, -3px -3px 0 #ffffff, -3px 3px 0 #ffffff, 3px -3px 0 #ffffff;
 }
 
 textarea {
@@ -712,7 +712,7 @@ img {
 }
 .list-group-item.active, .list-group-item.selected {
   color: #fff;
-  background-color: #116cd6;
+  background-color: #ffffff;
 }
 
 .list-group-header {
@@ -2235,7 +2235,7 @@ tbody {
 tr:active,
 .table-striped tr:active:nth-child(even) {
   color: #fff;
-  background-color: #116cd6;
+  background-color: #fff;
 }
 
 thead tr:active {
