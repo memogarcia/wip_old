@@ -1,0 +1,10 @@
+.pane-one-fourth {
+    width: 25%;
+    max-width: 300px;
+    min-width: 120px;
+    flex: none;
+}
+
+.sidebar {
+    padding-top: 10px;
+}
