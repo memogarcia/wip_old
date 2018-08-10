@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{WIP}</title>
-    <link rel="stylesheet" href="assets/photon-0.1.2-dist/css/photon.css">
-    <link rel="stylesheet" href="assets/css/editormd.css" />
+    <link rel="stylesheet" href="assets/vendor/css/photon.css">
+    <link rel="stylesheet" href="assets/vendor/css/editormd.css" />
     <link rel="stylesheet" href="assets/css/wip.css">
 </head>
 
@@ -81,45 +81,12 @@
         module = undefined;
     }
 </script>
-<script src="assets/jquery-3.3.1-min.js"></script>
-<script src="assets/vendor/editormd.js"></script>
-
+<script src="assets/vendor/js/jquery-3.3.1-min.js"></script>
+<script src="assets/vendor/js/editormd.js"></script>
+<script src="assets/js/md_editor.js"></script>
 <script>
-    // You can also require other files to run in this process
-    require('./dist/renderer.js')
-</script>
-
-<script type="text/javascript">
-    $(function () {
-        var editor = editormd("editormd", {
-            path: "lib/",
-            //theme : "dark",
-            //previewTheme : "dark"
-            toolbarIcons: function () {
-                // Or return editormd.toolbarModes[name]; // full, simple, mini
-                // Using "||" set icons align right.
-                return []
-            },
-            lineNumbers: false,
-            flowChart: true,
-            watch: false,
-            toolbar: true,
-            placeholder: "",
-            height: "100%",
-            onchange: function () {},
-            onload: function () {
-                var keyMap = {
-                    "Cmd-P": function (cm) {
-                        editor.watch();
-                    },
-                    "Cmd-E": function (cm) {
-                        editor.unwatch();
-                    }
-                };
-                this.addKeyMap(keyMap);
-            }
-        });
-    });
+        // You can also require other files to run in this process
+        require('./dist/renderer.js')
 </script>
 <script>
     if (window.module) module = window.module;
