@@ -24,7 +24,6 @@ ipc.on('file-opened', (event, file, content) => {
 })
 
 ipc.on('files', (event, file, content) => {
-    // console.log(file)
     getTitle(file)
 })
 
@@ -35,7 +34,7 @@ function getTitle(file) {
     const fs = require('fs');
 
     const rl = readline.createInterface({
-        input: fs.createReadStream(file).pipe(sutil.head(1))
+        input: fs.createReadStream(file).pipe(sutil.head(1)) // this won't display empty
     });
 
     var title;
@@ -51,5 +50,6 @@ ipc.on('get-notebooks', (event, name) => {
     var n = name.split("/")
     var notebook_name = n[n.length-1]
     notebook_li = jQuery('<span class="nav-group-item">' + notebook_name + '</span>').appendTo(notebook_div)
-    console.log(notebook_li)
+    // jQuery(".notes").hide()
+    // jQuery(".notes").show() // what happened with the overflow?
 })

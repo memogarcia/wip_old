@@ -19,7 +19,7 @@ function createWindow() {
     // });
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        height: 600,
+        height: 800,
         width: 1800
     });
     // and load the index.html of the app.
@@ -109,10 +109,8 @@ function listNotebooks() {
         files.map(function (file) {
             return path.join(p, file);
         }).filter(function (file) {
-            console.log(file)
             return fs.statSync(file).isDirectory
         }).forEach(function (file) {
-            console.log(file)
             mainWindow.webContents.send('get-notebooks', file)
         });
     });
