@@ -24,27 +24,36 @@
                             </a>
                             <span class="nav-group-item">
                                 <span class="icon icon-flow-tree"></span>
-                                Mind Map
+                                Map
                             </span>
                             <span class="nav-group-item">
                                 <span class="icon icon-check"></span>
-                                TODO
+                                Todo
                             </span>
                             <span class="nav-group-item">
                                 <span class="icon icon-doc-landscape"></span>
-                                Flash Cards
+                                Cards
                             </span>
-                            <!-- <span class="nav-group-item">
-                                <span class="icon icon-search"></span>
-                                Search
-                            </span> -->
                             <h5 class="nav-group-title">Notes</h5>
+                            <span class="nav-group-item">
+                                All
+                            </span>
+                            <span class="nav-group-item active">
+                                Python
+                            </span>
                         </nav>
                     </div>
                     <div class="pane-one-fourth">
                         <ul class="list-group">
                             <li class="list-group-header">
                                 <input class="form-control" type="text" placeholder="Search">
+                            </li>
+                            <li class="list-group-item active">
+                                <!-- <img class="img-circle media-object pull-left" src="/assets/img/avatar.jpg" width="32" height="32"> -->
+                                <div class="media-body">
+                                    <strong>Async Await</strong>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
                             </li>
                             <li class="list-group-item">
                                 <!-- <img class="img-circle media-object pull-left" src="/assets/img/avatar.jpg" width="32" height="32"> -->
@@ -56,9 +65,9 @@
                         </ul>
                     </div>
                     <div class="pane pane-data">
-                            <div id="editormd">
-                                    <textarea style="display:none;"></textarea>
-                                </div>
+                        <div id="editormd">
+                            <textarea style="display:none;"># lol</textarea>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,7 +75,12 @@
     </body>
 </body>
 
-<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+<script>
+    if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }
+</script>
 <script src="assets/jquery-3.3.1-min.js"></script>
 <script src="assets/vendor/editormd.js"></script>
 
@@ -76,45 +90,40 @@
 </script>
 
 <script type="text/javascript">
-    $(function() {
+    $(function () {
         var editor = editormd("editormd", {
-            path : "lib/",
+            path: "lib/",
             //theme : "dark",
             //previewTheme : "dark"
-            toolbarIcons : function() {
+            toolbarIcons: function () {
                 // Or return editormd.toolbarModes[name]; // full, simple, mini
                 // Using "||" set icons align right.
                 return []
             },
-            lineNumbers     : false,
-            flowChart : true,
+            lineNumbers: false,
+            flowChart: true,
             watch: false,
             toolbar: true,
             placeholder: "",
             height: "100%",
-            onchange : function() {
-            },
-            onload : function() {
+            onchange: function () {},
+            onload: function () {
                 var keyMap = {
-                    "Ctrl-P": function(cm) {
-                        watch: true; // not working
-                        //alert("Ctrl+P");
-                        //return false;
+                    "Cmd-P": function (cm) {
+                        editor.watch();
                     },
-                    "Ctrl-A": function(cm) { // default Ctrl-A selectAll
-                        // custom
-                        //alert("Ctrl+A");
-                        cm.execCommand("selectAll");
-                    },
-                    //"Shift-2" : function(cm){
-                    //}
+                    "Cmd-E": function (cm) {
+                        editor.unwatch();
+                    }
                 };
                 this.addKeyMap(keyMap);
             }
         });
     });
 </script>
-<script>if (window.module) module = window.module;</script>
+<script>
+    if (window.module) module = window.module;
+</script>
 
 
 </html>

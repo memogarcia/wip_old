@@ -15,11 +15,10 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         height: 600,
         width: 800,
-        frame: true,
+        //frame: true,
         // titleBarStyle: 'hidden',
         minHeight: 300
     });
-
     // and load the index.html of the app.
     mainWindow.loadFile(path.join(__dirname, "../index.html"));
 

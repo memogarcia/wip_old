@@ -1,5 +1,12 @@
 # WIP
 
+## TODO
+
+- Fix repo layout
+- Create a new file
+- Create a new window
+- ~~Ctrl-P should preview and un-preview the editor~~
+
 ## Features
 
 Table of contents

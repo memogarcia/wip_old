@@ -7,9 +7,19 @@
     flex: none;
 }
 
-/* .sidebar {
-    padding-top: 10px;
-} */
+.nav-group-item:active, .nav-group-item.active {
+    background-color: #f5f5f4;
+    border-left: green;
+    border-left-style: solid;
+    /* border-left-width: 5px; */
+}
+
+.list-group-item.active, .list-group-item.selected {
+    color: gray;
+    background-color: #ffffff;
+    border-left: green;
+    border-left-style: solid;
+}
 
 /* Custom Editormd thene */
 .editormd-toolbar {
