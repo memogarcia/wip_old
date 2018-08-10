@@ -88,7 +88,7 @@
 
 .editormd-toolbar {
     width: 100%;
-    min-height: 52px;
+    height: 100%;
     background: #fff;
     display: none;
     position: absolute;
@@ -100,11 +100,11 @@
 
 .editormd {
     width: 90%;
-    height: 640px;
+    min-height: 640px;
     text-align: left;
     position: relative;
     font-family: "Meiryo UI", "Microsoft YaHei", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, Monaco, monospace, Tahoma, STXihei, 华文细黑, STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, 宋体, Heiti, 黑体, sans-serif;
-    margin: 0px auto 15px;
+    margin: 10px auto 0px;
     overflow: hidden;
     border-width: 1px;
     border-style: solid;

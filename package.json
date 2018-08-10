@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "@types/node": "^10.5.7",
+        "line-stream-util": "^1.2.0",
         "node-notifier": "^5.2.1"
     }
 }

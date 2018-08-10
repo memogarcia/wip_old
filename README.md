@@ -6,6 +6,7 @@
 - Create a new file
 - Create a new window
 - ~~Ctrl-P should preview and un-preview the editor~~
+- markdown viewer has a css issue that does not display the file fully while scrolling when loading file from renderer.js (text pasted manually does not have this issue.) (maybe a timing issue?)
 
 ## Features
 
