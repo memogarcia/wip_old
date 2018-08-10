@@ -652,6 +652,7 @@ textarea {
   overflow-y: auto;
   flex: 1;
   border-left: 1px solid #ddd;
+  overflow: hidden;
 }
 .pane:first-child {
   border-left: 0;
