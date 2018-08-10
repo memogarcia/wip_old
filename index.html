@@ -34,7 +34,11 @@
                                 <span class="icon icon-doc-landscape"></span>
                                 Cards
                             </span>
-                            <h5 class="nav-group-title">Notes</h5>
+                            <span class="nav-group-item">
+                                <span class="icon icon-cog"></span>
+                                Preferences
+                            </span>
+                            <h5 class="nav-group-title">Notebooks</h5>
                             <span class="nav-group-item">
                                 All
                             </span>
@@ -42,7 +46,13 @@
                                 Python
                             </span>
                         </nav>
+                        <div class="bottom-actions">
+                            <button class="btn-link btn-large">
+                                <span class="icon icon-plus"></span>
+                            </button>
+                        </div>
                     </div>
+
                     <div class="pane-one-fourth scroll">
                         <ul class="list-group">
                             <li class="list-group-header">
@@ -64,11 +74,36 @@
                             </li>
                         </ul>
                     </div>
+
                     <div class="pane pane-data">
-                        <!-- <div id="editormd">
+                        <div class="submenu">
+
+                        </div>
+                        <div id="editormd">
                             <textarea style="display:none;"># lol</textarea>
-                        </div> -->
+                        </div>
                     </div>
+
+                    <!-- <div class="pane-one-fourth scroll">
+                        <div class="submenu">
+                            <div class="content">
+                                <div class="btn-group">
+                                    <div class="btn-group">
+                                        <button class="btn btn-large btn-default">
+                                            <span class="icon icon-flow-branch"></span>
+                                        </button>
+                                        <button class="btn btn-large btn-default">
+                                            <span class="icon icon-download"></span>
+                                        </button>
+                                        <button class="btn btn-large btn-default">
+                                            <span class="icon icon-upload"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
                 </div>
             </div>
         </div>
@@ -85,8 +120,8 @@
 <script src="assets/vendor/js/editormd.js"></script>
 <script src="assets/js/md_editor.js"></script>
 <script>
-        // You can also require other files to run in this process
-        require('./dist/renderer.js')
+    // You can also require other files to run in this process
+    require('./dist/renderer.js')
 </script>
 <script>
     if (window.module) module = window.module;

@@ -7,7 +7,7 @@ $(function () {
         lineNumbers: false,
         flowChart: true,
         watch: false,
-        toolbar: true,
+        toolbar: false,
         placeholder: "",
         height: "100%",
         onchange: function () {},
