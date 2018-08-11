@@ -1,7 +1,7 @@
 {
     "name": "wip",
     "version": "1.0.0",
-    "description": "A minimal Electron application written with Typescript",
+    "description": "",
     "scripts": {
         "start": "electron ./app/main.js"
     },

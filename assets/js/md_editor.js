@@ -13,10 +13,10 @@ $(function () {
         onchange: function () {},
         onload: function () {
             var keyMap = {
-                "Cmd-P": function (cm) {
+                "Ctrl-P": function (cm) {
                     editor.watch();
                 },
-                "Cmd-E": function (cm) {
+                "Ctrl-E": function (cm) {
                     editor.unwatch();
                 }
             };

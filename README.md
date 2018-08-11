@@ -7,6 +7,7 @@
 - Create a new window
 - ~~Ctrl-P should preview and un-preview the editor~~
 - markdown viewer has a css issue that does not display the file fully while scrolling when loading file from renderer.js (text pasted manually does not have this issue.) (maybe a timing issue?)
+- git integration
 
 ## Features
 
@@ -32,3 +33,27 @@ FlowChart
     cond(yes)->e
     cond(no)->op
     ```
+
+## Development environment
+
+### Mac OS
+
+    brew install node
+
+### Linux
+
+    pacman -S nodejs npm
+    apt-get install -y nodejs
+
+### Windows
+
+    cinst nodejs.install
+
+Get the repo.
+
+    git clone https://github.com/memogarcia/wip
+    cd wip
+    npm install dependencies && npm install
+    npm start
+
+Have fun!
