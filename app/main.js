@@ -26,8 +26,8 @@ function createWindow() {
     mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
 
-    Menu.setApplicationMenu(menus.mainMenu)
-    app.dock.setMenu(menus.dockMenu)
+    // Menu.setApplicationMenu(menus.mainMenu)
+    // app.dock.setMenu(menus.dockMenu)
 
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
